@@ -8,7 +8,7 @@ Some nltk module might be needed, plase modify and insert the script below if ne
 import pymongo
 import nltk
 import argparse
-
+import os
 
 FLAG = None
 
@@ -73,14 +73,23 @@ def write_summary_into_db(post,host,port):
         print('Warning: No summary was written.')
     return
 
-def main(host,port,query,show=False):
+def main(query,host,port,show=False):
     posts = read_from_mongodb(host,port,query,show)
     for post in posts:
         try:
+            if show: print(post['title'])
             post['summary'] = summarize(post['content'],show)
+            write_summary_into_db(post,host,port)
         except KeyError:
             print('Warning: No content found in{}'.format(post['_id']))
+    print('Done')
+    os._exit(1)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    main()
+    parser.add_argument('--query',type=dict,default={},help="Query for certain collection. Default:all.  e.g. {'title':'Machine Learning: A Gentle Introduction. – Towards Data Science'}")
+    parser.add_argument('--host',type=str,default='127.0.0.1',help="The host of MongoDB")
+    parser.add_argument('--port',type=int,default='27017',help="The port of MongoDB")
+    parser.add_argument('--show',type=bool,default=False,help="Show the title and summary or not.")
+    FLAGS, unparsed = parser.parse_known_args()
+    main(FLAGS.query,FLAGS.host,FLAGS.port,FLAGS.show)
