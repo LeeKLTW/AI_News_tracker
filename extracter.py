@@ -10,7 +10,7 @@ import nltk
 import argparse
 import os
 
-FLAG = None
+FLAGS = None
 
 def read_from_mongodb(host,port,query={},show=False):
     """Get the query result from MongoDB.
@@ -94,7 +94,11 @@ if __name__ == '__main__':
     parser.add_argument('--port',type=int,default='27017',help="The port of MongoDB")
     parser.add_argument('--show',type=bool,default=False,help="Show the title and summary or not.")
     FLAGS, unparsed = parser.parse_known_args()
-    print('1')
-    print(FLAGS.query)
-    print('2')
-    main(FLAGS.query,FLAGS.host,FLAGS.port,FLAGS.show)
+    query = {}
+    if FLAGS.title is not None: 
+        query['title'] = FLAGS.title
+    if FLAGS.author is not None:
+        query['author'] = FLAGS.author
+    if FLAGS.date is not None:
+        query['date'] = FLAGS.date
+    main(query,FLAGS.host,FLAGS.port,FLAGS.show)
