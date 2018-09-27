@@ -25,7 +25,11 @@ Python package:
 ## 1.Execute MongoDB
 mongod
 ## 2.Crawling
+
+>python crawler.py
+
 ## 3.Extracting
+>python extracter.py
 
 # Authors
 LeeKLTW
