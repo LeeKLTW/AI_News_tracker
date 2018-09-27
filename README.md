@@ -12,8 +12,9 @@ Python package:
   nltk
 
   Some nltk module might be needed, plase modify and insert the script below if neccesary:
-  >>> import nltk
-  >>> nltk.download()
+  >import nltk
+  
+  >nltk.download()
   
 ## Installing
   1.git clone https://github.com/LeeKLTW/AI_News_tracker
