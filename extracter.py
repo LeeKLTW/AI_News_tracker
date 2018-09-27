@@ -87,9 +87,14 @@ def main(query,host,port,show=False):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--query',type=dict,default={},help="Query for certain collection. Default:all.  e.g. {'title':'Machine Learning: A Gentle Introduction. – Towards Data Science'}")
+    parser.add_argument('--title',type=str,default=None,help="Query for title. Default:None e.g. 'Machine Learning: A Gentle Introduction. – Towards Data Science'")
+    parser.add_argument('--author',type=str,default=None,help="Query for author. Default:None e.g. 'Nvs Abhishek' ")
+    parser.add_argument('--date',type=str,default=None,help="Query for date. Default:None e.g.'Sep 22' ")
     parser.add_argument('--host',type=str,default='127.0.0.1',help="The host of MongoDB")
     parser.add_argument('--port',type=int,default='27017',help="The port of MongoDB")
     parser.add_argument('--show',type=bool,default=False,help="Show the title and summary or not.")
     FLAGS, unparsed = parser.parse_known_args()
+    print('1')
+    print(FLAGS.query)
+    print('2')
     main(FLAGS.query,FLAGS.host,FLAGS.port,FLAGS.show)
