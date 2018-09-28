@@ -18,6 +18,7 @@ def read_from_mongodb(host,port,query={},show=False):
         host: str. The host of MongoDB.
         port: int.The port of MongoDB.
         query: dict. Query for certain collection. Default:all.  e.g. {'title':'Machine Learning: A Gentle Introduction. – Towards Data Science'}
+        show: bool. Show the summary or not. Default False.
     Returns:
         List of post(document) found.
     """
@@ -74,6 +75,15 @@ def write_summary_into_db(post,host,port):
     return
 
 def main(query,host,port,show=False):
+    """Main
+    Args:
+        query: dict. Query for certain collection. Default:all.  e.g. {'title':'Machine Learning: A Gentle Introduction. – Towards Data Science'}
+        host: str. The host of MongoDB.
+        port: int.The port of MongoDB.
+        show: bool. Show the summary or not. Default False.
+    Returns:
+        List of post(document) found.
+    """
     posts = read_from_mongodb(host,port,query,show)
     for post in posts:
         try:
@@ -92,7 +102,7 @@ if __name__ == '__main__':
     parser.add_argument('--date',type=str,default=None,help="Query for date. Default:None e.g.'Sep 22' ")
     parser.add_argument('--host',type=str,default='127.0.0.1',help="The host of MongoDB")
     parser.add_argument('--port',type=int,default='27017',help="The port of MongoDB")
-    parser.add_argument('--show',type=bool,default=False,help="Show the title and summary or not.")
+    parser.add_argument('--show',type=bool,default=False,help="bool. Show the summary or not. Default False.")
     FLAGS, unparsed = parser.parse_known_args()
     query = {}
     if FLAGS.title is not None: 
