@@ -12,7 +12,7 @@ import os
 
 FLAGS = None
 
-def read_from_mongodb(host,port,query={},show=False):
+def __read_from_mongodb__(host,port,query={},show=False):
     """Get the query result from MongoDB.
     Args:
         host: str. The host of MongoDB.
@@ -26,10 +26,10 @@ def read_from_mongodb(host,port,query={},show=False):
     posts = [i for i in collection.find(query)]
     print(f'Read {len(posts)} posts from database.')
     if show:
-        _=[print(posts['title']) for i in posts]
+        _=[print(post['title']) for post in posts]
     return posts
 
-def summarize(content,show=False):
+def __summarize__(content,show=False):
     """Summerize the content by counting top 5 sentences that have most NN,NNP in Named-entity recognition.
     Args:
         content: str. The content you want to summerize.
@@ -55,7 +55,7 @@ def summarize(content,show=False):
             summary.append(sent[5])
     return summary
 
-def write_summary_into_db(post,host,port):
+def __write_summary_into_db__(post,host,port):
     """write summary into MongoDB
     Args:
         post: dict. document
@@ -74,12 +74,12 @@ def write_summary_into_db(post,host,port):
     return
 
 def main(query,host,port,show=False):
-    posts = read_from_mongodb(host,port,query,show)
+    posts = __read_from_mongodb__(host,port,query,show)
     for post in posts:
         try:
             if show: print(post['title'])
-            post['summary'] = summarize(post['content'],show)
-            write_summary_into_db(post,host,port)
+            post['summary'] = __summarize__(post['content'],show)
+            __write_summary_into_db__(post,host,port)
         except KeyError:
             print('Warning: No content found in{}'.format(post['_id']))
     print('Done')
