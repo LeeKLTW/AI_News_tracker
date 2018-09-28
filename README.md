@@ -49,6 +49,14 @@ Demo
 If the file already exists.
 ![](https://imgur.com/fPFg0Pc.jpg)
 
+The information you will store in MongoDB is shown below:
+
+| layout_type                	| 'title' 	| 'author' 	| 'date' 	| 'content' 	| 'tags' 	|
+|----------------------------	|:--------:|:---------:|:-------:|:----------:|:-------:|
+| medium(towardsdatascience) 	| Yes     	| Yes      	| Yes    	| Yes       	| Yes    	|
+| technews                   	| Yes     	| Yes      	| Yes    	| Yes       	| Yes    	|
+
+
 
 ## 3.Extracting
 ```
