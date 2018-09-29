@@ -49,7 +49,7 @@ Demo
 If the file already exists.
 ![](https://imgur.com/fPFg0Pc.jpg)
 
-The information you will store in MongoDB is shown below:
+The information you will store in MongoDB  shown below:
 
 | layout_type                	| 'title' 	| 'author' 	| 'date' 	| 'content' 	| 'tags' 	|
 |----------------------------	|:--------:|:---------:|:-------:|:----------:|:-------:|
