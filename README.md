@@ -7,10 +7,14 @@ MongoDB ([official](https://www.mongodb.com/),[docker](https://hub.docker.com/_/
 
 Python package:
   pymongo
+
   requests
+  
   BeautifulSoup
+  
   nltk
 
+  
   Some nltk module might be needed, plase modify and insert the script below if neccesary:
   ```
   import nltk
@@ -27,6 +31,7 @@ in command line
 ```
 mongod
 ```
+Remember your host,port,account,password
 
 ## 2.Crawling
 ```
