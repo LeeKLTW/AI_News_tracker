@@ -106,8 +106,10 @@ Judging by this sentence, we can know that:
 - [ ] Add search function on title and content based on tf-idf, cos-similarity
 - [ ] Check if it's possible to use [doc2vec](https://arxiv.org/abs/1405.4053) on recommendation system
 - [x] Check if it's possible to improve the Chineses article POS tagging by Hidden markov.
+
   Yes.
 - [x] Check if it's possible to translate Chineses to English,summarize, and translate it back to Chinese?
+
   Don't do it.
 - [x] Check nltk sinica treebank.
       -> It's not suitable for technews ...
