@@ -104,7 +104,7 @@ Judging by this sentence, we can know that:
 # Work in progress 
 - [ ] Update Summary Extracter based on [Seq2Seq](https://arxiv.org/abs/1409.3215) 
 - [ ] Add search function on title and content based on tf-idf, cos-similarity
-- [ ] Check if it's possible to use [doc2vec](https://arxiv.org/abs/1405.4053) on recommendation system
+- [x] Check if it's possible to use [doc2vec](https://arxiv.org/abs/1405.4053) on recommendation system
 - [x] Check if it's possible to improve the Chineses article POS tagging by Hidden markov.
 
   Yes.
