@@ -5,6 +5,7 @@ crawl news contents from website like medium(toward data science), 科技新報,
 ## Prerequisites(dependency)
 MongoDB ([official](https://www.mongodb.com/),[docker](https://hub.docker.com/_/mongo/))
 
+
 Python package:
   pymongo
 
@@ -80,7 +81,7 @@ optional arguments:
   --show SHOW      Show the title and summary or not.
 ```
 Demo 
-We want to know what this article want to tell us.
+Suppose we want to know what this article want to tell us.
 [Machine Learning: A Gentle Introduction. – Towards Data Science'](https://towardsdatascience.com/machine-learning-a-gentle-introduction-17e96d8143fc)
 ![](https://imgur.com/77YTwTx.jpg)
 ```
