@@ -1,3 +1,5 @@
+_potential security vulnerability package 'requests'_
+
 # AI_News_tracker
 crawl news contents from website like medium(toward data science), 科技新報, store in MongoDB, extract information by NLTK
 
